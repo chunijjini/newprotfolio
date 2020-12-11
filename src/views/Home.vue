@@ -279,7 +279,8 @@
             
             },
             handleScroll( evnet ){
-                let header = document.getElementById( "header" );
+                // let header = document.getElementById( "header" );
+                TweenMax.to( header, 0.35, { y: -(window.scrollY), ease:Power0.easeInOut });
                 console.log( header );
                 console.log( window, window.scrollY );
             },

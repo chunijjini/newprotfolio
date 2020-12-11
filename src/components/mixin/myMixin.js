@@ -15,9 +15,9 @@ let myMixin = {
     },
 
     methods: {
-        handleScroll(event) {
-            let header = document.getElementById( "header" );
-            console.log( "myMixin", header );
+        handleScroll( event  ) {
+            let $header = document.getElementById( "header" );
+            return $header;
             // console.log( event );
         },
         resizeHandler( event ){
