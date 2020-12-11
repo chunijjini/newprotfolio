@@ -4,12 +4,14 @@
 let myMixin = {
     created(){
         window.addEventListener('scroll', this.handleScroll );
+        window.addEventListener( "wheel", this.wheelEvent );
         window.addEventListener('resize', this.resizeHandler);
         window.addEventListener( "mousewheel", this.mouseWheelEvent ) 
 
      },
     destroyed () {
         window.removeEventListener('scroll', this.handleScroll );
+        window.removeEventListener( "wheel", this.wheelEvent );
         window.removeEventListener('resize', this.resizeHandler);
         window.removeEventListener( "mousewheel", this.mouseWheelEvent ) 
     },
@@ -23,16 +25,15 @@ let myMixin = {
         resizeHandler( event ){
         },
 
-        mouseWheelEvent( event ){ 
-        }, 
+        // wheelEvent( event ){ 
+        //     console.log( event );
+        // }, 
     
     },
     mounted(){
-        this.$nextTick(() => {
-            this.resizeHandler();
-            this.handleScroll();
-        });
- 
+        this.resizeHandler();
+        this.handleScroll();
+        // this.wheelEvent();
         // bus.$emit('end:spinner');
     }
 

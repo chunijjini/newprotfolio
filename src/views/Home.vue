@@ -1,5 +1,5 @@
 <template>
-    <div class="content" >
+    <div class="content"  ref="contents" >
         <Header />
         <div class="home__content" :class="{ active: isActive }">
             <div class="home__text">
@@ -38,7 +38,7 @@
                                     <div class="video__inner">
                                         <div class="video__player">
                                             <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Secuencia-01_6-1.mp4">    
+                                                <source src="@/assets/video/Bullsone.mp4">    
                                                 <source src="false" type="video/webm">
                                                 <source src="false" type="video/ogg">
                                             </video>      
@@ -51,7 +51,7 @@
                                     <div class="video__inner">
                                         <div class="video__player">
                                             <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Secuencia-01-1.mp4">    
+                                                <source src="@/assets/video/Hodoo.mp4">    
                                                 <source src="false" type="video/webm">
                                                 <source src="false" type="video/ogg">
                                             </video>      
@@ -103,7 +103,7 @@
                                     <div class="video__inner">
                                         <div class="video__player">
                                             <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Secuencia-01_2-1.mp4">    
+                                                <source src="@/assets/video/LG_signature.mp4">    
                                                 <source src="false" type="video/webm">
                                                 <source src="false" type="video/ogg">
                                             </video>      
@@ -116,7 +116,7 @@
                                     <div class="video__inner">
                                         <div class="video__player">
                                             <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Secuencia-01_8-1.mp4">    
+                                                <source src="@/assets/video/Lineage_M.mp4">    
                                                 <source src="false" type="video/webm">
                                                 <source src="false" type="video/ogg">
                                             </video>      
@@ -204,7 +204,7 @@
 
     import Header from '@/components/Header.vue'
     export default {
-        mixins: [myMixin],
+        // mixins: [myMixin],
         name: 'Home',
         components: {
 		 Header
@@ -225,6 +225,7 @@
             });
         },
         mounted: function(){
+            this.handleScroll();
         },
 
         methods: {
@@ -279,15 +280,24 @@
             
             },
             handleScroll( evnet ){
+                if( this.event == "underfined"){
+                    this.event = null;
+                    console.log( this.event );
+                }
+
+                let divContentBox = this.$refs.contents;
+                divContentBox.onscroll = function( event ){
+                    var $e = event || window.event;
+                    console.log( $e );
+                }
                 // let header = document.getElementById( "header" );
-                TweenMax.to( header, 0.35, { y: -(window.scrollY), ease:Power0.easeInOut });
-                console.log( header );
-                console.log( window, window.scrollY );
+                // TweenMax.to( header, 0.35, { y: -(window.scrollY), ease:Power0.easeInOut });
+                // console.log( window, window.scrollY );
             },
             resizeHandler(event){
                 let wW = window.innerWidth ;
                 console.log( wW );
-            }
+            },
         }
         
 
@@ -347,7 +357,7 @@
                             .item{ width: 30vw; height: 40vw;}
                         }
                         &:nth-child(4){ width: 20vw; right:12.5%;
-                            .item{ width: 20vw; height: 12.5vw; }
+                            .item{ width: 20vw; height: 12.5vw;}
                         }
                         &:nth-child(5){ width: 15vw; right:-5%;}
                     }

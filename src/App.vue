@@ -29,7 +29,8 @@
     left: 0;
     width: 100%;
     // height: 100%;
-    // min-height:100%;
+    min-height:100%;
+    overflow-x: hidden;
     background-color: #fff;
   }
 </style>
