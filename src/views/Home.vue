@@ -1,7 +1,7 @@
 <template>
     <div class="content"  ref="contents" >
         <Header />
-        <div class="home__content" :class="{ active: isActive }">
+        <section class="home__content" :class="{ active: isActive }">
             <div class="home__text">
                 <div id="gallerys" class="gallery">
                     <div class="gallery__inner">
@@ -186,12 +186,36 @@
                 </div>
             </div> 
 
-        </div>
-        <div class="home__curators">
+        </section>
+        <section class="home__curators">
             <div class="text_wrapper">
                 Live your own <em>unique</em>
             </div>
-        </div>
+            <div class="container">
+                <div class="label">About us</div>
+                <div class="featured">
+                    <div class="video__content">
+                        <div class="video__inner">
+                            <div class="video__player">
+                                <video class="player" autoplay="false" controls preload="none" muted="false" playsinline>
+                                    <source src="@/assets/video/Abene_Home.mp4" type="video/mp4">
+                                    <source src="false" type="video/webm">
+                                    <source src="false" type="video/ogg">
+                                </video>
+                            </div>
+                            <div class="video__poster">
+                                <div class="background__bg"></div>
+                                <div class="overlay"></div>
+                                <div class="video__trigger"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="name">Abene Mendizabal</div>
+                    <div class="position">Founder & CEO Spain Collection</div>
+                </div>
+                <div class="label label--list">Ambassadors</div>
+            </div>
+        </section>
         
     </div>
 </template>
@@ -376,6 +400,36 @@
         // &::-webkit-scrollbar-track {background-color: transparent; }
         &.active{ opacity: 1;  }
         &:after{ content: ''; display: block; clear: both; } 
+    }
+
+    .home__curators{ display: block; position: relative; padding:52.8vw 0 16vw; visibility: visible;
+        .text_wrapper{ position: relative; width: auto; height: auto; margin-bottom: 1vw; line-height: .9; z-index: 2; color: #fff; font-size:7vw; text-align: center; text-transform: uppercase;}
+        .container{ position: relative; width: 100vw; height: auto; margin:auto; background: #060707;
+            .label{ position: relative; font-weight: bold; font-size:.7vw; line-height: 1.2; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 6.5vw; bottom:-15vw;}
+            .featured{ position: relative; width: 50vw; height: 35vw; margin: auto auto 9vw; bottom:-15vw;
+                .video__content{ position: relative; width: 50vw; height: 30vw; top:0; left:0; right:0; bottom:0;
+                    &:before{ content: ""; display: block; }
+                    .video__inner{ position: absolute; width: 100%; height: 100%; top:0; right:0; bottom:0; left:0;
+                        .video__player{ position: relative; top:0; left:0; width: 100%; height:100%; overflow: hidden;
+                            video{ display: none; object-fit: cover; min-width: 100%; min-height: 100%; width: 100%; height: 100%; position: absolute; top:0; right:0; bottom:0; left:0; }
+                        }
+                        .video__poster{ position: absolute; top:0; right:0; bottom:0; left:0; width: 100%; height: 100%;  overflow: hidden;
+                            .background__bg{ position: absolute; top: -1%; right:-1%; bottom:-1%; left:-1%; background:url( "../assets/images/caratula_video_abene_new.jpg"); background-position: top; background-repeat:no-repeat; background-size:cover; }
+                            .overlay{ position: absolute; width: 100%; height: 100%; top:0; left:0; background: #000; opacity: 0.6; will-change: transform; }
+                            .video__trigger{  width: 6.5vw; height: 6.5vw; border-radius: 50%; line-height: 6.5vw; position: absolute; left: 50%; top: 50%;   cursor: pointer; z-index: 10;
+                                -webkit-transform: translateX(-50%) translateY(-50%); 
+                                transform: translateX(-50%) translateY(-50%);
+                                background-image: url("../assets/images/player.svg"); background-position: 50%; background-size: contain; background-repeat: no-repeat;
+                                -webkit-transition: all .45s cubic-bezier(.05,.76,.38,1.015); transition: all .45s cubic-bezier(.05,.76,.38,1.015);  -webkit-transition: all .45s var(--ease-out); transition: all .45s var(--ease-out);
+                            }
+                        }
+                    }
+                }
+                .name{ color: #fff; font-weight: 500; font-size:1vw; line-height: 1; text-align: center; margin-top: 2.6vw; }
+                .position{ color: #fff; font-weight: 300; font-size:.7vw; line-height: 1; text-align: center; margin-top: .5vw; }
+            }
+        } 
+
     }
 }
 </style>  
