@@ -346,14 +346,22 @@
             handleScroll( vertical, horizontal, nativeEvent ){
                 let sT =  vertical.scrollTop;
                 let item = document.querySelector( ".video--visible" );
-                if( sT >= item.offsetTop ){
-                    console.log( "해당 위치에 들어왔니?" ); 
+                let scrollPercent =  Math.floor(( item.clientHeight - sT ) /  item.clientHeight );
+                console.log(  Math.floor(( item.clientHeight - sT ) /  item.clientHeight ) );
+                let _isIn = false;
+                if( scrollPercent >= 0 ){
+                    let items = document.querySelectorAll( ".gallery__item" );
+                    items.forEach( function( el, index ){
+                        if( _isIn ) return;
+                        TweenMax.set( el, { opacity: 1 }); 
+                        TweenMax.to( el, 0.35, { opacity: scrollPercent, delay: index * 0.1, ease:Expo.easeInOut });
+                        _isIn = true;
+                    }) 
+                }else{
+                    _isIn = false;
                 }
 
-                let items = document.querySelectorAll( ".gallery__item" );
-                items.forEach( function( el, index ){
-                    console.log( el, index )
-                })
+               
              
                
             },
