@@ -1,18 +1,18 @@
 <template>
   <div id="app" >
       <Loading />
-        <router-view  />
+      <router-view  />
   </div> 
 </template> 
 
 <script> 
   import Loading from '@/components/Loading.vue';
   import myMixin from '@/components/mixin/myMixin'
-  export default {
 
+  export default {
     name: 'App',   
     components: { 
-      Loading
+      Loading,
     },
 
   }
@@ -24,13 +24,11 @@
   // @import '@/assets/scss/mixin';  
   #app{ 
     display: block;
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    // height: 100%;
-    min-height:100%;
-    overflow-x: hidden;
+    height: 100%;
     background-color: #fff;
   }
 </style>

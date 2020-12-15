@@ -52,8 +52,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     html, body{
       width: 100vw;
       height: 100%;
-      // height: calc(1vh * 100);
-      // overflow: hidden;
+      height: calc(1vh * 100);
+      overflow: hidden;
     }
     .blind{
       z-index:-1px;

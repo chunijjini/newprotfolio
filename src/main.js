@@ -1,12 +1,11 @@
 import Vue from 'vue'
-import vuescroll from 'vue-scroll'
+import vuescroll from 'vuescroll/dist/vuescroll-native';
 import App from './App.vue'
 import router from './router'  
 
 Vue.config.productionTip = false
 
-Vue.use( vuescroll )
-
+Vue.use(vuescroll);
 
 
 new Vue({

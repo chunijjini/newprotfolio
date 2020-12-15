@@ -1,221 +1,222 @@
 <template>
     <div class="content"  ref="contents" >
-        <Header />
-        <section class="home__content" :class="{ active: isActive }">
-            <div class="home__text">
-                <div id="gallerys" class="gallery">
-                    <div class="gallery__inner">
-                        <div class="gallery__item">
-                            <div class="item">
-                                <div class="video">
-                                    <div class="video__inner">
-                                        <div class="video__player">
-                                            <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Flamenca-2.mp4">    
-                                                <source src="false" type="video/webm">
-                                                <source src="false" type="video/ogg">
-                                            </video>      
+        <vue-scroll :ops="ops" ref="vs" @handle-scroll="handleScroll" >
+            <Header />
+            <section class="home__content" :class="{ active: isActive }">
+                <div class="home__text">
+                    <div id="gallerys" class="gallery">
+                        <div class="gallery__inner">
+                            <div class="gallery__item">
+                                <div class="item">
+                                    <div class="video">
+                                        <div class="video__inner">
+                                            <div class="video__player">
+                                                <video autoplay preload="none" muted="muted" loop playsinline>
+                                                    <source src="@/assets/video/Flamenca-2.mp4">    
+                                                    <source src="false" type="video/webm">
+                                                    <source src="false" type="video/ogg">
+                                                </video>      
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_01"></div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_01"></div>
+                                    </div>
                                 </div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_02"></div>
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_02"></div>
+
+                            <div class="gallery__item">
+                                <div class="item">
+                                    <div class="video">
+                                        <div class="video__inner">
+                                            <div class="video__player">
+                                                <video autoplay preload="none" muted="muted" loop playsinline>
+                                                    <source src="@/assets/video/Bullsone.mp4">    
+                                                    <source src="false" type="video/webm">
+                                                    <source src="false" type="video/ogg">
+                                                </video>      
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="video">
+                                        <div class="video__inner">
+                                            <div class="video__player">
+                                                <video autoplay preload="none" muted="muted" loop playsinline>
+                                                    <source src="@/assets/video/Hodoo.mp4">    
+                                                    <source src="false" type="video/webm">
+                                                    <source src="false" type="video/ogg">
+                                                </video>      
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_03"></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_04"></div>
+                                    </div>
                                 </div>
                             </div>
 
-                        </div>
+                            <div class="gallery__item galleryTarget">
+                                <div class="item">
+                                    <div class="video video--visible">
+                                        <div class="video__inner">
+                                            <div class="video__player">
+                                                <video autoplay preload="none" muted="muted" loop playsinline>
+                                                    <source src="@/assets/video/Bg_Home.mp4">    
+                                                    <source src="false" type="video/webm">
+                                                    <source src="false" type="video/ogg">
+                                                </video>      
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_05"></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_06"></div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div class="gallery__item">
-                            <div class="item">
-                                <div class="video">
-                                    <div class="video__inner">
-                                        <div class="video__player">
-                                            <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Bullsone.mp4">    
-                                                <source src="false" type="video/webm">
-                                                <source src="false" type="video/ogg">
-                                            </video>      
+                            <div class="gallery__item">
+                                <div class="item">
+                                    <div class="video">
+                                        <div class="video__inner">
+                                            <div class="video__player">
+                                                <video autoplay preload="none" muted="muted" loop playsinline>
+                                                    <source src="@/assets/video/LG_signature.mp4">    
+                                                    <source src="false" type="video/webm">
+                                                    <source src="false" type="video/ogg">
+                                                </video>      
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="video">
-                                    <div class="video__inner">
-                                        <div class="video__player">
-                                            <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Hodoo.mp4">    
-                                                <source src="false" type="video/webm">
-                                                <source src="false" type="video/ogg">
-                                            </video>      
+                                <div class="item">
+                                    <div class="video">
+                                        <div class="video__inner">
+                                            <div class="video__player">
+                                                <video autoplay preload="none" muted="muted" loop playsinline>
+                                                    <source src="@/assets/video/Lineage_M.mp4">    
+                                                    <source src="false" type="video/webm">
+                                                    <source src="false" type="video/ogg">
+                                                </video>      
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                             <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_03"></div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_07"></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_08"></div>
+                                    </div>
                                 </div>
                             </div>
-                             <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_04"></div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="gallery__item">
-                            <div class="item">
-                                <div class="video video--visible">
-                                    <div class="video__inner">
-                                        <div class="video__player">
-                                            <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Bg_Home.mp4">    
-                                                <source src="false" type="video/webm">
-                                                <source src="false" type="video/ogg">
-                                            </video>      
+                            <div class="gallery__item">
+                                <div class="item">
+                                    <div class="video">
+                                        <div class="video__inner">
+                                            <div class="video__player">
+                                                <video autoplay preload="none" muted="muted" loop playsinline>
+                                                    <source src="@/assets/video/Secuencia-01_7-1.mp4">    
+                                                    <source src="false" type="video/webm">
+                                                    <source src="false" type="video/ogg">
+                                                </video>      
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_05"></div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_09"></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="background">
+                                        <div class="background__bg bg__img_10"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_06"></div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="gallery__item">
-                            <div class="item">
-                                <div class="video">
-                                    <div class="video__inner">
-                                        <div class="video__player">
-                                            <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/LG_signature.mp4">    
-                                                <source src="false" type="video/webm">
-                                                <source src="false" type="video/ogg">
-                                            </video>      
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                 <div class="video">
-                                    <div class="video__inner">
-                                        <div class="video__player">
-                                            <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Lineage_M.mp4">    
-                                                <source src="false" type="video/webm">
-                                                <source src="false" type="video/ogg">
-                                            </video>      
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_07"></div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_08"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="gallery__item">
-                            <div class="item">
-                                <div class="video">
-                                    <div class="video__inner">
-                                        <div class="video__player">
-                                            <video autoplay preload="none" muted="muted" loop playsinline>
-                                                <source src="@/assets/video/Secuencia-01_7-1.mp4">    
-                                                <source src="false" type="video/webm">
-                                                <source src="false" type="video/ogg">
-                                            </video>      
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_09"></div>
-                                </div>
-                            </div>
-                              <div class="item">
-                                <div class="background">
-                                    <div class="background__bg bg__img_10"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="text__wrapper">
-                    <div class="title___box">
-                        <div class="title__list">
-                            <span>Spain</span>
-                            <span>Collection</span>
-                            <span>is</span>
-                            <span>your</span>
-                            <span>expert</span>
-                            <span>partner</span>
-                            <span>for</span>
-                            <span>deluxe</span>
-                        </div>
-                        <div class="title__list"> 
-                            <span>bespoke</span>
-                            <span>travel</span>
-                            <span>experiences</span> 
-                            <span>in</span>
                         </div>
                     </div>
-                </div>
-            </div> 
-
-        </section>
-        <section class="home__curators">
-            <div class="text_wrapper">
-                Live your own <em>unique</em>
-            </div>
-            <div class="container">
-                <div class="label">About us</div>
-                <div class="featured">
-                    <div class="video__content">
-                        <div class="video__inner">
-                            <div class="video__player">
-                                <video class="player" autoplay="false" controls preload="none" muted="false" playsinline>
-                                    <source src="@/assets/video/Abene_Home.mp4" type="video/mp4">
-                                    <source src="false" type="video/webm">
-                                    <source src="false" type="video/ogg">
-                                </video>
+                    <div class="text__wrapper">
+                        <div class="title___box">
+                            <div class="title__list">
+                                <span>Spain</span>
+                                <span>Collection</span>
+                                <span>is</span>
+                                <span>your</span>
+                                <span>expert</span>
+                                <span>partner</span>
+                                <span>for</span>
+                                <span>deluxe</span>
                             </div>
-                            <div class="video__poster">
-                                <div class="background__bg"></div>
-                                <div class="overlay"></div>
-                                <div class="video__trigger"></div>
+                            <div class="title__list"> 
+                                <span>bespoke</span>
+                                <span>travel</span>
+                                <span>experiences</span> 
+                                <span>in</span>
                             </div>
                         </div>
                     </div>
-                    <div class="name">Abene Mendizabal</div>
-                    <div class="position">Founder & CEO Spain Collection</div>
+                </div> 
+            </section>
+            <section class="home__curators">
+                <div class="text_wrapper">
+                    Live your own <em>unique</em>
                 </div>
-                <div class="label label--list">Ambassadors</div>
-            </div>
-        </section>
+                <div class="container">
+                    <div class="label">About us</div>
+                    <div class="featured">
+                        <div class="video__content">
+                            <div class="video__inner">
+                                <div class="video__player">
+                                    <video class="player" autoplay="false" controls preload="none" muted="false" playsinline>
+                                        <source src="@/assets/video/Abene_Home.mp4" type="video/mp4">
+                                        <source src="false" type="video/webm">
+                                        <source src="false" type="video/ogg">
+                                    </video>
+                                </div>
+                                <div class="video__poster">
+                                    <div class="background__bg"></div>
+                                    <div class="overlay"></div>
+                                    <div class="video__trigger"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="name">Abene Mendizabal</div>
+                        <div class="position">Founder & CEO Spain Collection</div>
+                    </div>
+                    <div class="label label--list">Ambassadors</div>
+                </div>
+            </section>
+        </vue-scroll>
         
     </div>
 </template>
@@ -226,16 +227,58 @@
     import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
     gsap.registerPlugin(DrawSVGPlugin);
 
-    import Header from '@/components/Header.vue'
+    const easings = [
+        'easeInQuad',
+        'easeOutQuad',
+        'easeInOutQuad',
+        'easeInCubic',
+        'easeOutCubic',
+        'easeInOutCubic',
+        'easeInQuart',
+        'easeOutQuart',
+        'easeInOutQuart',
+        'easeInQuint',
+        'easeOutQuint',
+        'easeInOutQuint'
+    ];
+     import Header from '@/components/Header.vue'
     export default {
         // mixins: [myMixin],
         name: 'Home',
         components: {
-		 Header
+            Header
 	    },
         data(){
             return{
                 isActive: false,
+                ops: {
+                    scrollPanel: {
+                        scrollingX: false,
+                        easing: 'easeInQuad',
+                        speed: 800
+                    },
+                    vuescroll: {
+                        mode: 'native',
+                        sizeStrategy: "number",
+                        wheelScrollDuration: 0,
+                        wheelDirectionReverse: false,
+                        locking: true,
+                        checkShifKey: true,
+                    },
+                    rail: {
+                        background: '#00ff00',
+                        keepShow: false,
+                        size: '10px',
+                        minSize: 0.2
+                    },
+                    //bar
+                    bar: {
+                        size : '10px',
+                        opacity:0,
+                        onlyShowBarOnScroll: false
+                    },
+                    easings,
+                }
             }
         },
         created(){
@@ -244,12 +287,9 @@
                 if( introEnd ){
                     this.cardListShow();
                     this.isActive = true; 
-                    // this.cardlistMove();
                 }
             });
-        },
-        mounted: function(){
-            this.handleScroll();
+
         },
 
         methods: {
@@ -303,27 +343,25 @@
                 })
             
             },
-            handleScroll( evnet ){
-                if( this.event == "underfined"){
-                    this.event = null;
-                    console.log( this.event );
+            handleScroll( vertical, horizontal, nativeEvent ){
+                let sT =  vertical.scrollTop;
+                let item = document.querySelector( ".video--visible" );
+                if( sT >= item.offsetTop ){
+                    console.log( "해당 위치에 들어왔니?" ); 
                 }
 
-                let divContentBox = this.$refs.contents;
-                divContentBox.onscroll = function( event ){
-                    var $e = event || window.event;
-                    console.log( $e );
-                }
-                // let header = document.getElementById( "header" );
-                // TweenMax.to( header, 0.35, { y: -(window.scrollY), ease:Power0.easeInOut });
-                // console.log( window, window.scrollY );
+                let items = document.querySelectorAll( ".gallery__item" );
+                items.forEach( function( el, index ){
+                    console.log( el, index )
+                })
+             
+               
             },
             resizeHandler(event){
                 let wW = window.innerWidth ;
                 console.log( wW );
             },
-        }
-        
+        },
 
     }
 </script>
@@ -341,9 +379,10 @@
 .mt{ font-family: "Metal";   font-weight: 300; letter-spacing: -1px;}
 .pL{ font-family: "Michroma";  font-weight: 400;  letter-spacing: -0.1rem; }
 .content{ display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+    .__rail-is-horizontal{ display: none !important;}
     .home__content{ position: relative; will-change: initial;  width: 100vw;
         .home__text{ display: block; position: relative; padding:0 0 10vw; visibility: visible;
-            .gallery{ position: relative; width: 100vw; height: 100vh;margin-top: 5vw;
+            .gallery{ position: relative; width: 100vw; height: 100vh; 
                 .gallery__inner{ position: relative; width: 100vw; height: 100%;
                     .gallery__item{ position: absolute; height: auto; bottom:0;
                         .item{ position: relative; width: 15vw; height: 25vw; margin-bottom: 2.5vw; overflow: hidden; opacity: 0; transform: scale(.5);

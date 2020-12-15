@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="header_content">
         <header :class="{ active: isActive }" id="header">
             <div class="header__menu">
                 <nav>
@@ -78,43 +78,46 @@
 .ms{ font-family: "Montserrat";   font-weight: 300; letter-spacing: -1px;}
 .mt{ font-family: "Metal";   font-weight: 400; letter-spacing: -1px;}
 .pL{ font-family: "Michroma";  font-weight: 400;  letter-spacing: -0.1rem; }
-
-    header{ position: relative; width: 70vw; height: 5vw; margin:5vw auto 0; opacity: 0; z-index: 10;
-        .header__menu{ position: absolute; top:50%; left:0; width: 100%; height: auto; transform: translateY(-50%);
-            .nav__list{
-                li{ float: left;
-                    a{ position: relative; display: inline-block; font-size:18px; font-weight: 300; padding:10px 0 1px;  @extend %noto-d;;  color: #0e0e0d;
-                        .nav_underline{ position: absolute; bottom:-.3vw; left:0; width: 0; height: .05vw; background: #bf1826; transition: all .5s;}
-                        &:hover{ color: #bf1826;
-                            .nav_underline{ width: 100%; }
+    .header_content{ z-index: 1; position: absolute; width: 100%; height: auto;  visibility: visible!important;
+        header{ position: relative; width: 70vw; height: 5vw; margin:0 auto; opacity: 0; z-index: 10;
+            .header__menu{ position: absolute; top:50%; left:0; width: 100%; height: auto; transform: translateY(-50%);
+                .nav__list{
+                    li{ float: left;
+                        a{ position: relative; display: inline-block; font-size:18px; font-weight: 300; padding:10px 0 1px;  @extend %noto-d;;  color: #0e0e0d;
+                            .nav_underline{ position: absolute; bottom:-.3vw; left:0; width: 0; height: .05vw; background: #bf1826; transition: all .5s;}
+                            &:hover{ color: #bf1826;
+                                .nav_underline{ width: 100%; }
+                            }
                         }
+                        &:first-child{ margin-right: 2vw;}
+                        &:nth-child(3){ float: right; margin-left:2vw; }
+                        &:nth-child(4){ float: right; }
                     }
-                    &:first-child{ margin-right: 2vw;}
-                    &:nth-child(3){ float: right; margin-left:2vw; }
-                    &:nth-child(4){ float: right; }
                 }
             }
-        }
-        .header__logo{
-            display: block; 
-            position: absolute;
-            width: 10vw;
-            height: 7.5vw;
-            top: 0;
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-            cursor: pointer;
-            a{
-                display: block;
-                width: 100%;
-                height: 100%;
-                background-image: url("../assets/images/header/logo.svg");
-                background-position: 50%;
-                background-repeat: no-repeat;
-                background-size: contain;
+            .header__logo{
+                display: block; 
+                position: absolute;
+                width: 10vw;
+                height: 7.5vw;
+                top: 0;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+                cursor: pointer;
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url("../assets/images/header/logo.svg");
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
             }
+            &.active{ opacity: 1; }
         }
-        &.active{ opacity: 1; }
-    }
+
+     }
+   
 </style>
