@@ -278,7 +278,30 @@
                         onlyShowBarOnScroll: false
                     },
                     easings,
-                }
+                },
+                scrollYpointer:[
+                    {
+                        x: 0,
+                        y: 62.6
+                    },
+                    {
+                        x: 0,
+                        y: 52
+                    },
+                    {
+                        x: 0,
+                        y: 107
+                    },
+                    {
+                        x : 0,
+                        y : 37
+                    },
+                    {
+                        x : 0,
+                        y : 62
+                    }
+
+                ]
             }
         },
         created(){
@@ -289,7 +312,6 @@
                     this.isActive = true; 
                 }
             });
-
         },
 
         methods: {
@@ -310,11 +332,11 @@
                 let itemLine3 = item[2];
                 let itemLine4 = item[3];
                 let itemLine5 = item[4];
-                TweenMax.to( itemLine1, 3, { x:0, y:62.6 + "vw",  ease:Expo.easeInOut });
-                TweenMax.to( itemLine2, 3, { x:0, y:52.6 + "vw",  ease:Expo.easeInOut });
-                TweenMax.to( itemLine3, 3, { x:0, y:107.6 + "vw",  ease:Expo.easeInOut });
-                TweenMax.to( itemLine4, 3, { x:0.0794+"vw", y:37.6 + "vw",  ease:Expo.easeInOut });
-                TweenMax.to( itemLine5, 3, { x:0, y:62.6 + "vw",  ease:Expo.easeInOut, onComplete:function(){
+                TweenMax.to( itemLine1, 3, { x: this.scrollYpointer[0].x , y: this.scrollYpointer[0].y + "vw",  ease:Expo.easeInOut });
+                TweenMax.to( itemLine2, 3, { x:this.scrollYpointer[1].x, y: this.scrollYpointer[1].y + "vw",  ease:Expo.easeInOut });
+                TweenMax.to( itemLine3, 3, { x:this.scrollYpointer[2].x, y: this.scrollYpointer[2].y + "vw",  ease:Expo.easeInOut });
+                TweenMax.to( itemLine4, 3, { x:this.scrollYpointer[3].x +"vw", y: this.scrollYpointer[3].y + "vw",  ease:Expo.easeInOut });
+                TweenMax.to( itemLine5, 3, { x:this.scrollYpointer[4].x, y: this.scrollYpointer[4].y + "vw",  ease:Expo.easeInOut, onComplete:function(){
                      EventBus.$emit( "actions", true );
                      _this.textShow();
                 }});
@@ -344,24 +366,33 @@
             
             },
             handleScroll( vertical, horizontal, nativeEvent ){
-                let sT =  vertical.scrollTop;
-                let item = document.querySelector( ".video--visible" );
-                let scrollPercent =  Math.floor(( item.clientHeight - sT ) /  item.clientHeight );
-                console.log(  Math.floor(( item.clientHeight - sT ) /  item.clientHeight ) );
-                let _isIn = false;
-                if( scrollPercent >= 0 ){
-                    let items = document.querySelectorAll( ".gallery__item" );
-                    items.forEach( function( el, index ){
-                        if( _isIn ) return;
-                        TweenMax.set( el, { opacity: 1 }); 
-                        TweenMax.to( el, 0.35, { opacity: scrollPercent, delay: index * 0.1, ease:Expo.easeInOut });
-                        _isIn = true;
-                    }) 
-                }else{
-                    _isIn = false;
-                }
+                let sT =  vertical.scrollTop / 100;
+                let items = document.querySelectorAll( ".gallery__item" );
+                let items3 = this.scrollYpointer[2].y;
 
-               
+                items.forEach( function( element, index ){
+                    var item1 = items[0];
+                    var item2 = items[1];
+                    var item3 = items[2];
+                    var item4 = items[3];
+                    var item5 = items[4];
+                    console.log(  items3, sT, "=============>", items3 + sT );
+                    TweenMax.to( item1, 0.75, { x: -(sT * 2) +"vw", ease:Power0.easeInOut });
+                    TweenMax.to( item2, 0.75, { x: -(sT * 5) +"vw", ease:Power0.easeInOut, delay: .1 });
+                    TweenMax.to( item3, 0.35, { y: (items3 + sT) + "vw", ease:Power0.easeInOut });
+                    TweenMax.to( item4, 0.75, { x: (sT * 5) +"vw", ease:Power0.easeInOut });
+                    TweenMax.to( item5, 0.75, { x: (sT * 5) +"vw", ease:Power0.easeInOut, delay: .1 });
+                   
+                    // if( sT >= Math.round( element[index].getBoundingClientRect().top ) ){
+                    // console.log( "스크롤 들어왔니?" );
+                    // }else{
+                    // console.log( "아닐때" ); 
+                    // }
+                });
+
+
+                //     console.dir( element.offsetTop, index );
+                // }) 
              
                
             },
